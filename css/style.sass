@@ -12,9 +12,10 @@ body
 	display: table
 
 .header
-	background: url(../images/hux.jpg)
+	background-image: url(../images/hux-sm.jpg)
 	background-size: cover
 	background-repeat: no-repeat
+	background-position: center center
 	position: relative
 
 	&:before
@@ -24,6 +25,8 @@ body
 		height: 100%
 		background: rgba(42, 92, 233, .8)
 		position: absolute
+		top: 0
+		left: 0
 
 	h1
 		text-align: center
@@ -35,12 +38,18 @@ body
 		margin: 0
 		font-size: 1.8em
 
+	.fade-header
+		display: none
+
 .banner-bar
 	background: $red
 	color: #fff
 	padding: 1rem
 	text-align: center
 	text-transform: uppercase
+	position: relative
+	z-index: 2
+	letter-spacing: 1px
 
 	p
 		margin: 0
@@ -119,9 +128,12 @@ body
 
 
 @media (min-width: 48em)
-	.header h1
-		padding: 16.65625rem 1rem
-		font-size: 3em
+	.header
+		background-image: url(../images/hux-sm.jpg)
+
+		h1
+			padding: 16.65625rem 1rem
+			font-size: 3em
 
 	.what-is-this
 		padding: 2.5em
@@ -147,9 +159,12 @@ body
 			border-width: 3px
 
 @media (min-width: 62.5em)
-	.header h1
-		padding: 11.5rem 1rem
-		position: relative
+	.header
+		background-image: url(../images/hux-xlarge.jpg)
+		padding: 0
+
+		h1
+			position: relative
 
 		span
 			display: none
@@ -166,8 +181,8 @@ body
 
 	.banner-bar
 		position: absolute
-		z-index: 2
-		width: 100%
+		left: 0
+		right: 0
 		bottom: -55px // height of the bar in px
 
 		&.fixed
@@ -185,7 +200,6 @@ body
 			display: block
 			float: left
 			padding-left: .75em
-			font-weight: 700
 
 		.right
 			display: block
