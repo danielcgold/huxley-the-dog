@@ -1,14 +1,12 @@
-$(window).scroll(function(){
-  if($(window).scrollTop() >= $('.what-is-this').offset().top){
-    $('.banner-bar').addClass('fixed');
-  } else {
-    $('.banner-bar').removeClass('fixed');
-  }
-});
-
 $(document).ready(function() {
   var languages = $('.fade-header');
   var index = -1;
+
+  showNext();
+
+  $(window).scroll(function(){
+    scrollRange();
+  });
 
   function showNext() {
       ++index;
@@ -18,5 +16,13 @@ $(document).ready(function() {
           .fadeOut(1250, showNext);
   }
 
-  showNext();
+  function scrollRange() {
+    var pixToShowNav = 100;
+
+    if($(window).scrollTop() >= pixToShowNav){
+      $('.banner-bar').addClass('fixed');
+    } else {
+      $('.banner-bar').removeClass('fixed');
+    }
+  }
 });
